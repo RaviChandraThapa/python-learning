@@ -8,3 +8,6 @@ __pycache__/
 
 # Environmental secrets (API keys, passwords)
 .env
+
+# File created by codes
+expenses.json
