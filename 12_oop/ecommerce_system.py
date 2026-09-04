@@ -40,13 +40,12 @@ class Order:
         total_cost = self.product.price * self.quantity
         if self.product.reduce_stock(self.quantity):
             if self.buyer.deduct_funds(total_cost):
-                self.status = "Completed"
-                self.status = "Completed"
+                self.status = "Completed"                
                 print("\nPurchase Successful")
                 print(f"You purchased {self.quantity} {self.product.name} at total Rs. {total_cost:.2f} successfully.")
                 return True
             else:
-                self.product.stock += self.quantiy
+                self.product.stock += self.quantity
                 print("Order cancelled: Transaction rolled back due to insufficient funds.")
                 return False
         else:
